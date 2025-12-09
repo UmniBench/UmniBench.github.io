@@ -1,0 +1,16 @@
+# GitHub Pages configuration for UmniBench
+title: UmniBench
+description: Unified Multi-modal Benchmark for Iterative Visual-Textual Interactions
+theme: null
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Enable plugins if needed
+plugins: []
+
+# Build settings
+markdown: kramdown

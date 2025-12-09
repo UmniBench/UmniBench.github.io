@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <style>
+            pre, code {
+                font-size: 16px;
+            }
+        </style>
+
+        <title>UmniBench: Unified Multi-modal Benchmark for Iterative Visual-Textual Interactions</title>
+        <link rel="icon" type="image/svg+xml" href="./static/img/icons/logo.svg">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Open Graph -->
+        <meta property="og:url" content="https://umnibench.github.io/" />
+        <meta property="og:image" content="" />
+        <meta property="og:title" content="UmniBench: Unified Multi-modal Benchmark" />
+        
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:title" content="UmniBench: Unified Multi-modal Benchmark" />
+        <meta name="twitter:description" content="" />
+
+        <!-- JS Libraries -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+        <!-- Plotly.js for charts -->
+        <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+        
+        <!-- Medium Zoom -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js"></script>
+        <script defer src="./static/js/zoom.js"></script>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="./static/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        
+        <!-- KaTeX -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    </head>
+
+    <body>
+        <div class="header-wrapper">
+            <div class="header-container" id="header-container">
+                <div class="header-content">
+                    <div class="umnibench-title-wrapper">
+                        <h1 style="margin-top: 0px">
+                            <i><span class="umnibench-logo"><span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span></span></i>
+                        </h1>
+                    </div>
+                    <div class="responsive-header">
+                        <h2>Unified Multi-modal Benchmark for Iterative Visual-Textual Interactions</h2>
+                    </div>
+
+                    <div class="authors-section">
+                        <!-- Paper authors - Update with actual authors -->
+                        <span class="author-block">
+                            <a href="#" target="_blank">Author Name</a><sup style="font-size: 0.8em;">1</sup>,
+                        </span>
+                        <span class="author-block">
+                            <a href="#" target="_blank">Author Name</a><sup style="font-size: 0.8em;">2</sup>
+                        </span>
+                    </div>
+
+                    <div class="affiliations-section">
+                        <span class="author-block"><sup style="font-size: 0.8em;">1</sup>Institution Name,</span>
+                        <span class="author-block"><sup style="font-size: 0.8em;">2</sup>Institution Name</span>
+                    </div>
+
+                    <div class="button-container">
+                        <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" class="button">
+                            <i class="ai ai-arxiv"></i> Paper
+                        </a>
+                        <a href="https://github.com/lokiniuniu/Umnibench" target="_blank" class="button">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="#leaderboard" class="button">
+                            <i class="fas fa-trophy"></i> Leaderboard
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Introduction -->
+            <h2 class="text">Introduction</h2>
+            <p>
+                <span class="umnibench-text">
+                    <span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span>
+                </span> (Unified Multi-modal Benchmark) is a comprehensive evaluation framework for assessing unified multi-modal AI models across 
+                <strong>understanding</strong>, <strong>generation</strong>, and <strong>editing</strong> capabilities through iterative visual-textual interactions.
+            </p>
+
+            <div class="highlight-section">
+                <div class="highlight-box">
+                    <img src="./static/img/icons/generation.svg" alt="Generation" style="width: 40px; height: 40px; margin-right: 15px;">
+                    <div>
+                        <strong>Multi-Turn Evaluation:</strong> 3-turn dialogue sessions testing generation, editing, and understanding capabilities in an integrated workflow.
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <img src="./static/img/icons/editing.svg" alt="Editing" style="width: 40px; height: 40px; margin-right: 15px;">
+                    <div>
+                        <strong>Comprehensive Coverage:</strong> 585+ validated test cases across diverse domains including physics, biology, art, mathematics, and more.
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <img src="./static/img/icons/understanding.svg" alt="Understanding" style="width: 40px; height: 40px; margin-right: 15px;">
+                    <div>
+                        <strong>Holistic Assessment:</strong> Evaluates consistency across visual details (color, texture, size, shape, position, style, text labels, expressions).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benchmark Overview -->
+            <h2 class="text"><span class="umnibench-text">
+                <span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span>
+            </span> Framework</h2>
+            
+            <div class="framework-description">
+                <p>
+                    <span class="umnibench-text">
+                        <span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span>
+                    </span> evaluates models through three consecutive turns:
+                </p>
+                <ul>
+                    <li><strong>Turn 1 - Text-to-Image Generation:</strong> Creating images from textual descriptions</li>
+                    <li><strong>Turn 2 & 3 - Image Editing:</strong> Modifying existing images based on instructions</li>
+                    <li><strong>All Turns - Visual Understanding:</strong> Answering multiple-choice questions about the generated/edited images</li>
+                </ul>
+                <p>
+                    Each turn includes visual understanding questions that test whether the model can accurately perceive and interpret 
+                    the visual content it has generated or modified, ensuring consistency throughout the interaction chain.
+                </p>
+            </div>
+
+            <!-- Sample Case Visualization -->
+            <h2 class="text">Example Test Case</h2>
+            <div class="case-example">
+                <div class="turn-section">
+                    <h3>Turn 1: Generation</h3>
+                    <div class="turn-content">
+                        <div class="prompt-box">
+                            <strong>Prompt:</strong> "A vibrant red billiard ball is positioned to the left of a cool blue billiard ball on a smooth, flat surface."
+                        </div>
+                        <div class="qa-box">
+                            <strong>Understanding Questions:</strong>
+                            <ul>
+                                <li>What are the two main entities/objects shown in the image?</li>
+                                <li>Where is the red billiard ball positioned?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="turn-section">
+                    <h3>Turn 2: Editing</h3>
+                    <div class="turn-content">
+                        <div class="prompt-box">
+                            <strong>Prompt:</strong> "Modify the previous image to show the red billiard ball, now positioned in front of the blue billiard ball, colliding with it."
+                        </div>
+                        <div class="qa-box">
+                            <strong>Understanding Questions:</strong>
+                            <ul>
+                                <li>Where is the red billiard ball positioned?</li>
+                                <li>Are the two balls in contact with each other?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="turn-section">
+                    <h3>Turn 3: Counterfactual Editing</h3>
+                    <div class="turn-content">
+                        <div class="prompt-box">
+                            <strong>Prompt:</strong> "Replace the red billiard ball with a green tennis ball, maintaining the collision scenario."
+                        </div>
+                        <div class="qa-box">
+                            <strong>Understanding Questions:</strong>
+                            <ul>
+                                <li>What is the color of the ball on the left?</li>
+                                <li>What type of ball is shown in the image besides the blue billiard ball?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <h2 class="text"><span class="umnibench-text">
+                <span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span>
+            </span> Statistics</h2>
+            
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">585+</div>
+                    <div class="stat-label">Test Cases</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Turns per Case</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Visual Attributes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Domains Covered</div>
+                </div>
+            </div>
+
+            <div class="domain-distribution">
+                <h3>Domain Coverage</h3>
+                <div id="domain-chart"></div>
+            </div>
+
+            <!-- Evaluation Protocol -->
+            <h2 class="text">Evaluation Protocol</h2>
+            
+            <div class="evaluation-protocol">
+                <h3>Understanding Score Calculation</h3>
+                <p>
+                    For each test case, models are evaluated on their ability to correctly answer visual understanding questions across all three turns. 
+                    The understanding score is calculated as:
+                </p>
+                <div class="formula-box">
+                    <p>Understanding Accuracy = (Correct Answers) / (Total Questions) × 100%</p>
+                </div>
+
+                <h3>Multi-dimensional Assessment</h3>
+                <p>
+                    We evaluate models across multiple dimensions:
+                </p>
+                <ul>
+                    <li><strong>Generation Quality:</strong> Assessing the quality and accuracy of initially generated images</li>
+                    <li><strong>Editing Consistency:</strong> Evaluating whether edits preserve unmodified elements while changing specified aspects</li>
+                    <li><strong>Visual Understanding:</strong> Testing comprehension through multiple-choice questions about visual content</li>
+                    <li><strong>Instruction Following:</strong> Measuring adherence to complex, multi-step instructions</li>
+                </ul>
+            </div>
+
+            <!-- Leaderboard -->
+            <h2 class="text" id="leaderboard"><span class="umnibench-text">
+                <span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span>
+            </span> Leaderboard</h2>
+            
+            <div class="leaderboard-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Organization</th>
+                            <th>Date</th>
+                            <th class="sortable-header" data-column-index="3">Turn 1<br/>Accuracy (%)<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="4">Turn 2<br/>Accuracy (%)<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="5">Turn 3<br/>Accuracy (%)<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header active" data-column-index="6">Overall<br/>Accuracy (%)<span class="sort-indicator">↓</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <tr>
+                            <td>GPT-4o <span class="model-badge proprietary-badge">Proprietary</span></td>
+                            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" alt="OpenAI" class="org-logo"></td>
+                            <td>2024-05</td>
+                            <td>85.2</td>
+                            <td>78.6</td>
+                            <td>72.4</td>
+                            <td>78.7</td>
+                        </tr>
+                        <tr>
+                            <td>OmniGen2 <span class="model-badge open-badge">Open Source</span></td>
+                            <td><img src="https://avatars.githubusercontent.com/u/OmniGen" alt="OmniGen" class="org-logo"></td>
+                            <td>2024-11</td>
+                            <td>82.1</td>
+                            <td>75.3</td>
+                            <td>68.9</td>
+                            <td>75.4</td>
+                        </tr>
+                        <tr>
+                            <td>OneCat <span class="model-badge open-badge">Open Source</span></td>
+                            <td>OneCat Team</td>
+                            <td>2024-10</td>
+                            <td>79.5</td>
+                            <td>72.8</td>
+                            <td>65.2</td>
+                            <td>72.5</td>
+                        </tr>
+                        <!-- Add more models here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Key Findings -->
+            <h2 class="text">Key Findings</h2>
+            
+            <div class="findings-section">
+                <div class="finding-box">
+                    <h3>Finding 1: Performance Degradation Across Turns</h3>
+                    <p>
+                        Models consistently show decreasing accuracy from Turn 1 to Turn 3, indicating challenges in maintaining 
+                        consistency throughout multi-turn interactions. Average accuracy drops by approximately 15-20% from initial 
+                        generation to final counterfactual editing.
+                    </p>
+                </div>
+
+                <div class="finding-box">
+                    <h3>Finding 2: Understanding-Generation Gap</h3>
+                    <p>
+                        A significant gap exists between models' generation capabilities and their understanding of generated content. 
+                        Many models can produce visually appealing images but struggle to accurately answer questions about specific 
+                        visual details in those same images.
+                    </p>
+                </div>
+
+                <div class="finding-box">
+                    <h3>Finding 3: Editing Consistency Challenges</h3>
+                    <p>
+                        Models often fail to preserve unmodified elements during editing operations. The average consistency score 
+                        for preserving unchanged attributes is only 65%, highlighting the difficulty of selective image modification.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Getting Started -->
+            <h2 class="text">Getting Started</h2>
+            
+            <div class="getting-started">
+                <h3>Evaluate Your Model</h3>
+                <p>
+                    To evaluate your model on <span class="umnibench-text">
+                        <span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span>
+                    </span>:
+                </p>
+                <div class="code-block">
+                    <pre><code># Clone the repository
+git clone https://github.com/lokiniuniu/Umnibench.git
+cd Umnibench
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run evaluation
+python model_adapters/umnibench.py --model your_model_name</code></pre>
+                </div>
+
+                <h3>Create a Custom Adapter</h3>
+                <p>
+                    To add support for your own model, create a custom adapter based on our template:
+                </p>
+                <div class="code-block">
+                    <pre><code>from model_adapters.adapters.adapter_template import BaseAdapter
+
+class YourModelAdapter(BaseAdapter):
+    def generate_image(self, prompt):
+        # Your generation logic
+        pass
+    
+    def edit_image(self, image, instruction):
+        # Your editing logic
+        pass
+    
+    def answer_question(self, image, question, options):
+        # Your VQA logic
+        pass</code></pre>
+                </div>
+            </div>
+
+            <!-- Citation -->
+            <h2 class="text">Citation</h2>
+            <div class="citation-box">
+                <pre><code>@article{umnibench2024,
+  title={UmniBench: Unified Multi-modal Benchmark for Iterative Visual-Textual Interactions},
+  author={Author Names},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2024}
+}</code></pre>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="conclusion">
+                <p>
+                    <span class="umnibench-text">
+                        <span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span>
+                    </span> represents a critical step toward comprehensive evaluation of unified multi-modal models. 
+                    By testing generation, editing, and understanding in an integrated workflow, we provide insights into 
+                    models' true capabilities for iterative visual-textual interactions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Leaderboard Sorting JavaScript -->
+        <script src="./static/js/leaderboard.js"></script>
+        <script src="./static/js/visualizations.js"></script>
+    </body>
+</html>

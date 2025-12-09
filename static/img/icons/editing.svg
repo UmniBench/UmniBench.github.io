@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="editGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00BCD4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B84CC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Image frame -->
+  <rect x="15" y="25" width="55" height="45" rx="5" fill="url(#editGrad)" opacity="0.2"/>
+  <rect x="15" y="25" width="55" height="45" rx="5" fill="none" stroke="url(#editGrad)" stroke-width="3"/>
+  
+  <!-- Edit brush/pen -->
+  <path d="M 60 20 L 85 45 L 75 55 L 50 30 Z" fill="#F9CA24" stroke="#000" stroke-width="2"/>
+  <circle cx="87" cy="43" r="8" fill="#6C5CE7"/>
+  
+  <!-- Content being edited -->
+  <path d="M 25 55 L 35 40 L 50 50 L 60 40" stroke="#00BCD4" stroke-width="2" fill="none"/>
+</svg>
