@@ -487,28 +487,40 @@
             
             <div class="findings-section">
                 <div class="finding-box">
-                    <h3>Finding 1: Performance Degradation Across Turns</h3>
+                    <h3>Finding 1: Significant Performance Degradation in Complex Reasoning Tasks</h3>
                     <p>
-                        Models consistently show decreasing accuracy from Turn 1 to Turn 3, indicating challenges in maintaining 
-                        consistency throughout multi-turn interactions. Average accuracy drops by approximately 15-20% from initial 
-                        generation to final counterfactual editing.
+                        All evaluated unified multimodal models exhibit a consistent monotonic decline across the three evaluation stages. 
+                        Average accuracy drops from 83.99% in the generation stage to 72.76% in the interaction stage, and finally to 59.55% 
+                        in the counterfactual reasoning stage—a cumulative reduction of 29.1%. This reveals systematic challenges in 
+                        long-horizon reasoning and adaptive capabilities. Notably, some models like OmniGen2 experience catastrophic 
+                        performance degradation exceeding 44% from generation to counterfactual stages, evidencing severe robustness 
+                        deficits when confronted with high-complexity counterfactual reasoning scenarios.
                     </p>
                 </div>
 
                 <div class="finding-box">
-                    <h3>Finding 2: Understanding-Generation Gap</h3>
+                    <h3>Finding 2: Domain-Specific Performance Gaps Reveal Architectural Limitations</h3>
                     <p>
-                        A significant gap exists between models' generation capabilities and their understanding of generated content. 
-                        Many models can produce visually appealing images but struggle to accurately answer questions about specific 
-                        visual details in those same images.
+                        Evaluation results show significant performance disparities across knowledge domains. Spatial relations (57.04%) 
+                        and Plant (59.88%) form a high-complexity cluster, indicating fundamental architectural bottlenecks in current 
+                        multimodal frameworks concerning three-dimensional spatial reasoning and fine-grained botanical feature extraction. 
+                        Conversely, everyday domains like Household (79.89%), Gardening (76.69%), and Personal Care (75.93%) exhibit 
+                        performance saturation. Interestingly, smaller models occasionally outperform larger counterparts in specific domains 
+                        (e.g., GPT-4o surpasses Bagel-Think in Fluid dynamics), challenging the assumption that parameter scale universally 
+                        dictates domain mastery.
                     </p>
                 </div>
 
                 <div class="finding-box">
-                    <h3>Finding 3: Editing Consistency Challenges</h3>
+                    <h3>Finding 3: Error Accumulation and Reasoning-Based Generation as Dual Bottlenecks</h3>
                     <p>
-                        Models often fail to preserve unmodified elements during editing operations. The average consistency score 
-                        for preserving unchanged attributes is only 65%, highlighting the difficulty of selective image modification.
+                        The low scores in counterfactual stages stem from two mechanisms: (1) <strong>Error Accumulation</strong>—since 
+                        counterfactual stages use previously generated images as input, early-stage failures cascade forward, with noise 
+                        in generated images amplifying through multiple editing rounds, manifesting as distorted textures and irregular colors; 
+                        (2) <strong>Training Set Gap for Reasoning-Based Generation</strong>—training data primarily contains clear attribute 
+                        descriptions, while interaction and counterfactual stages involve reasoning processes (e.g., predicting interaction 
+                        outcomes after entity replacement) that are rare in training sets. This explains why tightly-coupled architectures 
+                        with bidirectional token flow (e.g., Bagel-Think) demonstrate stronger reasoning stability.
                     </p>
                 </div>
             </div>
