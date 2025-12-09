@@ -97,11 +97,11 @@ This guide will help you deploy the UmniBench homepage to GitHub Pages.
 
 7. **Update Citation** (`docs/index.html`, around line 350):
    ```bibtex
-   @article{umnibench2024,
-     title={Your Actual Title},
-     author={Your Authors},
-     journal={Your Journal},
-     year={2024}
+   @article{umnibench2025,
+     title={UmniBench: Unified Multi-modal Benchmark for Iterative Visual-Textual Interactions},
+     author={Liu, Kai and Chen, Leyang and Li, Wenbo and Wang, Zhixin and Pei, Renjing and Song, Fenglong and Kong, Linghe and Zhang, Yulun},
+     journal={arXiv preprint arXiv:XXXX.XXXXX},
+     year={2025}
    }
    ```
 

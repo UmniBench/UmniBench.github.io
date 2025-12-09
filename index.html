@@ -62,18 +62,42 @@
                     </div>
 
                     <div class="authors-section">
-                        <!-- Paper authors - Update with actual authors -->
+                        <!-- Paper authors -->
                         <span class="author-block">
-                            <a href="#" target="_blank">Author Name</a><sup style="font-size: 0.8em;">1</sup>,
+                            <a href="#" target="_blank">Kai Liu</a><sup style="font-size: 0.8em;">1*</sup>,
                         </span>
                         <span class="author-block">
-                            <a href="#" target="_blank">Author Name</a><sup style="font-size: 0.8em;">2</sup>
+                            <a href="#" target="_blank">Leyang Chen</a><sup style="font-size: 0.8em;">1*</sup>,
+                        </span>
+                        <span class="author-block">
+                            <a href="#" target="_blank">Wenbo Li</a><sup style="font-size: 0.8em;">2</sup>,
+                        </span>
+                        <span class="author-block">
+                            <a href="#" target="_blank">Zhixin Wang</a><sup style="font-size: 0.8em;">3</sup>,
+                        </span>
+                        <br>
+                        <span class="author-block">
+                            <a href="#" target="_blank">Renjing Pei</a><sup style="font-size: 0.8em;">3</sup>,
+                        </span>
+                        <span class="author-block">
+                            <a href="#" target="_blank">Fenglong Song</a><sup style="font-size: 0.8em;">3</sup>,
+                        </span>
+                        <span class="author-block">
+                            <a href="#" target="_blank">Linghe Kong</a><sup style="font-size: 0.8em;">1†</sup>,
+                        </span>
+                        <span class="author-block">
+                            <a href="#" target="_blank">Yulun Zhang</a><sup style="font-size: 0.8em;">1†</sup>
                         </span>
                     </div>
 
                     <div class="affiliations-section">
-                        <span class="author-block"><sup style="font-size: 0.8em;">1</sup>Institution Name,</span>
-                        <span class="author-block"><sup style="font-size: 0.8em;">2</sup>Institution Name</span>
+                        <span class="author-block"><sup style="font-size: 0.8em;">1</sup>Shanghai Jiao Tong University,</span>
+                        <span class="author-block"><sup style="font-size: 0.8em;">2</sup>The Chinese University of Hong Kong,</span>
+                        <span class="author-block"><sup style="font-size: 0.8em;">3</sup>Huawei Technologies Ltd.</span>
+                        <br>
+                        <span class="author-block" style="font-size: 0.9em; margin-top: 5px; display: inline-block;">
+                            <sup>*</sup>Equal contribution <sup>†</sup>Corresponding authors
+                        </span>
                     </div>
 
                     <div class="button-container">
@@ -111,7 +135,7 @@
                 <div class="highlight-box">
                     <img src="./static/img/icons/editing.svg" alt="Editing" style="width: 40px; height: 40px; margin-right: 15px;">
                     <div>
-                        <strong>Comprehensive Coverage:</strong> 585+ validated test cases across diverse domains including physics, biology, art, mathematics, and more.
+                        <strong>Comprehensive Coverage:</strong> 533 validated test cases across diverse domains including physics, biology, art, mathematics, and more.
                     </div>
                 </div>
                 <div class="highlight-box">
@@ -146,54 +170,8 @@
 
             <!-- Sample Case Visualization -->
             <h2 class="text">Example Test Case</h2>
-            <div class="case-example">
-                <div class="turn-section">
-                    <h3>Turn 1: Generation</h3>
-                    <div class="turn-content">
-                        <div class="prompt-box">
-                            <strong>Prompt:</strong> "A vibrant red billiard ball is positioned to the left of a cool blue billiard ball on a smooth, flat surface."
-                        </div>
-                        <div class="qa-box">
-                            <strong>Understanding Questions:</strong>
-                            <ul>
-                                <li>What are the two main entities/objects shown in the image?</li>
-                                <li>Where is the red billiard ball positioned?</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="turn-section">
-                    <h3>Turn 2: Editing</h3>
-                    <div class="turn-content">
-                        <div class="prompt-box">
-                            <strong>Prompt:</strong> "Modify the previous image to show the red billiard ball, now positioned in front of the blue billiard ball, colliding with it."
-                        </div>
-                        <div class="qa-box">
-                            <strong>Understanding Questions:</strong>
-                            <ul>
-                                <li>Where is the red billiard ball positioned?</li>
-                                <li>Are the two balls in contact with each other?</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="turn-section">
-                    <h3>Turn 3: Counterfactual Editing</h3>
-                    <div class="turn-content">
-                        <div class="prompt-box">
-                            <strong>Prompt:</strong> "Replace the red billiard ball with a green tennis ball, maintaining the collision scenario."
-                        </div>
-                        <div class="qa-box">
-                            <strong>Understanding Questions:</strong>
-                            <ul>
-                                <li>What is the color of the ball on the left?</li>
-                                <li>What type of ball is shown in the image besides the blue billiard ball?</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="case-example-image">
+                <img src="./image.png" alt="Example Test Case - Three Turn Evaluation" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
             </div>
 
             <!-- Statistics -->
@@ -203,7 +181,7 @@
             
             <div class="stats-container">
                 <div class="stat-box">
-                    <div class="stat-number">585+</div>
+                    <div class="stat-number">533</div>
                     <div class="stat-label">Test Cases</div>
                 </div>
                 <div class="stat-box">
@@ -215,14 +193,16 @@
                     <div class="stat-label">Visual Attributes</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">20+</div>
+                    <div class="stat-number">13</div>
                     <div class="stat-label">Domains Covered</div>
                 </div>
             </div>
 
             <div class="domain-distribution">
                 <h3>Domain Coverage</h3>
-                <div id="domain-chart"></div>
+                <div class="domain-image-container">
+                    <img src="./image1.png" alt="Test Cases by Domain" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                </div>
             </div>
 
             <!-- Evaluation Protocol -->
@@ -255,48 +235,249 @@
                 <span class="u">U</span><span class="m">m</span><span class="n">ni</span><span class="b">B</span><span class="e">e</span><span class="n2">nch</span>
             </span> Leaderboard</h2>
             
+            <!-- Base Models (Full Capability) -->
+            <h3 style="margin-top: 2rem; color: var(--primary-color);">🏆 Full Capability Models</h3>
             <div class="leaderboard-container">
                 <table class="leaderboard-table">
                     <thead>
                         <tr>
                             <th>Model</th>
-                            <th>Organization</th>
-                            <th>Date</th>
-                            <th class="sortable-header" data-column-index="3">Turn 1<br/>Accuracy (%)<span class="sort-indicator">⇅</span></th>
-                            <th class="sortable-header" data-column-index="4">Turn 2<br/>Accuracy (%)<span class="sort-indicator">⇅</span></th>
-                            <th class="sortable-header" data-column-index="5">Turn 3<br/>Accuracy (%)<span class="sort-indicator">⇅</span></th>
-                            <th class="sortable-header active" data-column-index="6">Overall<br/>Accuracy (%)<span class="sort-indicator">↓</span></th>
+                            <th class="sortable-header" data-column-index="1">Turn 1 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="2">Turn 2 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="3">Turn 3 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header active" data-column-index="4">Overall Avg<span class="sort-indicator">↓</span></th>
                         </tr>
                     </thead>
-                    <tbody id="leaderboard-body">
+                    <tbody id="leaderboard-body-base">
                         <tr>
-                            <td>GPT-4o <span class="model-badge proprietary-badge">Proprietary</span></td>
-                            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png" alt="OpenAI" class="org-logo"></td>
-                            <td>2024-05</td>
-                            <td>85.2</td>
-                            <td>78.6</td>
-                            <td>72.4</td>
-                            <td>78.7</td>
+                            <td>Bagel-think</td>
+                            <td>87.39</td>
+                            <td>80.03</td>
+                            <td>66.58</td>
+                            <td>77.85</td>
                         </tr>
                         <tr>
-                            <td>OmniGen2 <span class="model-badge open-badge">Open Source</span></td>
-                            <td><img src="https://avatars.githubusercontent.com/u/OmniGen" alt="OmniGen" class="org-logo"></td>
-                            <td>2024-11</td>
-                            <td>82.1</td>
-                            <td>75.3</td>
-                            <td>68.9</td>
-                            <td>75.4</td>
+                            <td>Ovis-U1</td>
+                            <td>91.01</td>
+                            <td>77.32</td>
+                            <td>64.69</td>
+                            <td>77.45</td>
                         </tr>
                         <tr>
-                            <td>OneCat <span class="model-badge open-badge">Open Source</span></td>
-                            <td>OneCat Team</td>
-                            <td>2024-10</td>
-                            <td>79.5</td>
-                            <td>72.8</td>
-                            <td>65.2</td>
-                            <td>72.5</td>
+                            <td>Bagel</td>
+                            <td>86.54</td>
+                            <td>76.47</td>
+                            <td>62.95</td>
+                            <td>75.14</td>
                         </tr>
-                        <!-- Add more models here -->
+                        <tr>
+                            <td>UniPic2</td>
+                            <td>85.34</td>
+                            <td>79.37</td>
+                            <td>60.32</td>
+                            <td>74.86</td>
+                        </tr>
+                        <tr>
+                            <td>GPT4o</td>
+                            <td>84.77</td>
+                            <td>75.54</td>
+                            <td>61.33</td>
+                            <td>73.71</td>
+                        </tr>
+                        <tr>
+                            <td>OmniGen2</td>
+                            <td>84.84</td>
+                            <td>59.66</td>
+                            <td>47.34</td>
+                            <td>63.56</td>
+                        </tr>
+                        <tr>
+                            <td>OneCAT</td>
+                            <td>83.29</td>
+                            <td>54.71</td>
+                            <td>45.53</td>
+                            <td>60.76</td>
+                        </tr>
+                        <tr>
+                            <td>Lumina-DiMOO</td>
+                            <td>76.20</td>
+                            <td>42.45</td>
+                            <td>38.47</td>
+                            <td>51.90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Understanding Only Models -->
+            <h3 style="margin-top: 2rem; color: var(--secondary-color);">🔍 Understanding Only Models</h3>
+            <div class="leaderboard-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th class="sortable-header" data-column-index="1">Turn 1 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="2">Turn 2 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="3">Turn 3 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header active" data-column-index="4">Overall Avg<span class="sort-indicator">↓</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body-und">
+                        <tr>
+                            <td>Kimi-VL-A3B-Instruct</td>
+                            <td>86.83</td>
+                            <td>76.47</td>
+                            <td>62.68</td>
+                            <td>75.14</td>
+                        </tr>
+                        <tr>
+                            <td>Januspro_UndOnly</td>
+                            <td>84.21</td>
+                            <td>66.64</td>
+                            <td>55.14</td>
+                            <td>68.39</td>
+                        </tr>
+                        <tr>
+                            <td>Qwen3-VL-8B-Instruct</td>
+                            <td>85.62</td>
+                            <td>64.01</td>
+                            <td>52.05</td>
+                            <td>66.89</td>
+                        </tr>
+                        <tr>
+                            <td>Emu3_UndOnly</td>
+                            <td>79.89</td>
+                            <td>56.69</td>
+                            <td>47.75</td>
+                            <td>61.10</td>
+                        </tr>
+                        <tr>
+                            <td>Janus_UndOnly</td>
+                            <td>48.09</td>
+                            <td>40.87</td>
+                            <td>34.10</td>
+                            <td>40.90</td>
+                        </tr>
+                        <tr>
+                            <td>BLIP-VQA_UndOnly</td>
+                            <td>40.51</td>
+                            <td>34.74</td>
+                            <td>33.22</td>
+                            <td>36.07</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Generation Only Models -->
+            <h3 style="margin-top: 2rem; color: var(--accent-color);">🎨 Generation Only Models</h3>
+            <div class="leaderboard-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th class="sortable-header" data-column-index="1">Turn 1 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="2">Turn 2 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="3">Turn 3 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header active" data-column-index="4">Overall Avg<span class="sort-indicator">↓</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body-gen">
+                        <tr>
+                            <td>Unipic_GenOnly</td>
+                            <td>85.62</td>
+                            <td>68.29</td>
+                            <td>58.56</td>
+                            <td>70.56</td>
+                        </tr>
+                        <tr>
+                            <td>OneCat_GenOnly</td>
+                            <td>84.84</td>
+                            <td>68.23</td>
+                            <td>58.44</td>
+                            <td>70.24</td>
+                        </tr>
+                        <tr>
+                            <td>Emu3_GenOnly</td>
+                            <td>81.37</td>
+                            <td>67.50</td>
+                            <td>59.38</td>
+                            <td>69.20</td>
+                        </tr>
+                        <tr>
+                            <td>JanusPro_GenOnly</td>
+                            <td>84.21</td>
+                            <td>66.64</td>
+                            <td>55.14</td>
+                            <td>68.39</td>
+                        </tr>
+                        <tr>
+                            <td>PixArt-Alpha_GenOnly</td>
+                            <td>77.97</td>
+                            <td>68.23</td>
+                            <td>58.44</td>
+                            <td>68.05</td>
+                        </tr>
+                        <tr>
+                            <td>Janus_GenOnly</td>
+                            <td>81.16</td>
+                            <td>66.64</td>
+                            <td>55.14</td>
+                            <td>67.41</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Editing Only Models -->
+            <h3 style="margin-top: 2rem; color: var(--tertiary-color);">✏️ Editing Only Models</h3>
+            <div class="leaderboard-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th class="sortable-header" data-column-index="1">Turn 2 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header" data-column-index="2">Turn 3 Avg<span class="sort-indicator">⇅</span></th>
+                            <th class="sortable-header active" data-column-index="3">Overall Avg<span class="sort-indicator">↓</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body-edit">
+                        <tr>
+                            <td>Nano-Banana-Gemini</td>
+                            <td>77.02</td>
+                            <td>70.18</td>
+                            <td>73.68</td>
+                        </tr>
+                        <tr>
+                            <td>Qwen-Image-Edit_EditOnly</td>
+                            <td>80.82</td>
+                            <td>64.09</td>
+                            <td>72.54</td>
+                        </tr>
+                        <tr>
+                            <td>FLUX.1-Fill_EditOnly</td>
+                            <td>68.56</td>
+                            <td>58.83</td>
+                            <td>63.74</td>
+                        </tr>
+                        <tr>
+                            <td>InstructPix2Pix_EditOnly</td>
+                            <td>65.39</td>
+                            <td>51.11</td>
+                            <td>58.32</td>
+                        </tr>
+                        <tr>
+                            <td>MagicBrush_EditOnly</td>
+                            <td>64.01</td>
+                            <td>52.05</td>
+                            <td>58.09</td>
+                        </tr>
+                        <tr>
+                            <td>Step1X-Edit_EditOnly</td>
+                            <td>26.30</td>
+                            <td>30.80</td>
+                            <td>28.53</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -379,11 +560,11 @@ class YourModelAdapter(BaseAdapter):
             <!-- Citation -->
             <h2 class="text">Citation</h2>
             <div class="citation-box">
-                <pre><code>@article{umnibench2024,
+                <pre><code>@article{umnibench2025,
   title={UmniBench: Unified Multi-modal Benchmark for Iterative Visual-Textual Interactions},
-  author={Author Names},
+  author={Liu, Kai and Chen, Leyang and Li, Wenbo and Wang, Zhixin and Pei, Renjing and Song, Fenglong and Kong, Linghe and Zhang, Yulun},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2024}
+  year={2025}
 }</code></pre>
             </div>
 
